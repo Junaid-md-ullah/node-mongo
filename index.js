@@ -10,7 +10,7 @@ app.use(cors());
 app.use(bodyParser.json());
 const dbUser=process.env.DB_USER;
 const pass=process.env.DB_PASS;
-const uri = `mongodb+srv://${dbUser}:${pass}@cluster0-zzeuc.mongodb.net/test?retryWrites=true&w=majority`;
+const uri = process.env.DB_PATH;
 
 
 let client = new MongoClient(uri, { useNewUrlParser: true });
