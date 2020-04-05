@@ -8,12 +8,10 @@ require('dotenv').config();
 
 app.use(cors());
 app.use(bodyParser.json());
-const dbUser=process.env.DB_USER;
-const pass=process.env.DB_PASS;
 const uri = process.env.DB_PATH;
 
 
-let client = new MongoClient(uri, { useNewUrlParser: true });
+let client = new MongoClient(uri, { useNewUrlParser: true, useUnifiedTopology: true });
 //database connection
 
 
